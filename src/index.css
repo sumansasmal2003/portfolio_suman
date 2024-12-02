@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@keyframes shiny {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shiny-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shiny 3s infinite;
+  transition: transform 0.3s;
+}
+
+/* Style the entire scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar (for horizontal scrolling) */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f4f4f4; /* Light background color */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid #ddd; /* Optional border for the track */
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff7b47, #ff5722); /* Gradient color */
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid #f4f4f4; /* Creates a gap between the thumb and track */
+}
+
+/* Style the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    135deg,
+    #ff5722,
+    #ff4500
+  ); /* Slightly darker gradient */
+}
+
+/* For Firefox (Optional) */
+* {
+  scrollbar-width: thin; /* Makes scrollbar thinner */
+  scrollbar-color: #ff5722 #f4f4f4; /* Thumb color and track color */
+}
